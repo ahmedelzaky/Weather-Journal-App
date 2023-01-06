@@ -1,6 +1,6 @@
 /* Global Variables */
 const WeatherApi = `http://api.openweathermap.org/data/2.5/forecast?zip=`;
-const ApiKey = `&appid=bff55bc84c407f64c5a2b59a1116d5af`;
+const ApiKey = `&appid=bff55bc84c407f64c5a2b59a1116d5af&units=imperial'`;
 let generateButton = document.querySelector("#generate");
 
 // Create a new date instance dynamically with JS
@@ -64,11 +64,11 @@ let updateUI = async () => {
     const allData = await request.json();
     document.getElementById("date").innerHTML = `Date: ${allData.date}`;
     document.getElementById("temp").innerHTML = `Temperature: ${(
-      allData.temp - 273.15
+      allData.temp - 273
     ).toLocaleString("en-US", {
       minimumIntegerDigits: 2,
       useGrouping: false,
-    })} C°  And Equal ${(((allData.temp - 273.15) * 9) / 5 + 32).toLocaleString(
+    })} C°  And Equal ${(((allData.temp - 273) * 9) / 5 + 32).toLocaleString(
       "en-US",
       {
         minimumIntegerDigits: 2,
