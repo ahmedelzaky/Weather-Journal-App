@@ -18,12 +18,11 @@ const Port = 3000;
 
 /* Middleware*/
 
-//Here we are configuring express to use body-parser as middle-ware.
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Cors for cross origin allowance
-const cors = require('cors');
+const cors = require("cors");
 app.use(cors());
 
 // Initialize the main project folder
@@ -36,21 +35,20 @@ app.listen(Port, () => {
 });
 
 // send projectData object data.
-app.get('/all',sendData);
-function sendData(req,res){
-res.send(projectData);
-//reset object to default value after finishing processes.
-projectData={};
-};
+app.get("/all", sendData);
+function sendData(req, res) {
+  res.send(projectData);
+  //reset object to default value after finishing processes.
+  projectData = {};
+}
 //add the data recived to The projectData object.
-app.post('/add',addData)
-function addData(req,res){
-console.log(req.body);
-newData={
-city:req.body.city,
-temp:req.body.temp,
-date:req.body.date,
-content:req.body.content
-};
-projectData=newData;
-};
+app.post("/add", addData);
+function addData(req, res) {
+  console.log(req.body);
+  newData = {
+    temp: req.body.temp,
+    date: req.body.date,
+    content: req.body.content,
+  };
+  projectData = newData;
+}
