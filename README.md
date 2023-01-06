@@ -5,7 +5,7 @@
 # Demo-Preview
 
 ## demo
-(![Alt text](website/screenSnap.png)
+![Alt text](website/screenSnap.png)
 
 # Table of contents
 
