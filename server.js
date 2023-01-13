@@ -47,6 +47,7 @@ function addData(req, res) {
   console.log(req.body);
   newData = {
     temp: req.body.temp,
+    temp_max: req.body.temp_max,
     date: req.body.date,
     content: req.body.content,
   };

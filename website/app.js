@@ -21,6 +21,7 @@ function perform() {
       transData("/add", {
         date: newDate,
         temp: data.list[0].main.temp,
+        temp_max: data.list[1].main.temp_max,
         content: feelings,
       });
       //calling the function to update UI.
